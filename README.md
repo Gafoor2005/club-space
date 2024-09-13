@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Introducing Club Space
 
-## Getting Started
+a platform Designed and Developed by Students to maintain user engagement and enhance user experience.
 
-First, run the development server:
+### Core Functions (on paper)
+1. Listing and Discovery of the Clubs
+2. Events Registrations / G Wallet Passes
+3. Resource Archive / Library
+4. Social Profiles
+5. Spaces
+6. LeaderBoard
+7. Showcase
+8. Announcements / Notifications / News / Notice Board
+#### IRL Usecase
+1. Improving Collaboration
+2. Encoraging Participaton
+3. Integiry amoung Students
+4. Find like-minded ones
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Story line
+As a student i have faced a lot of issues on integrity and availability of resources.
+### The need for CS
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Innovation is the key dirver for the growth of an institution. As we know we can't do great in the class room anymore, we need something to find your own interest like clubs.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+we don't think you will do something great or anything. But it will build your career.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Why CS ?
+Find your interest, We belive that it'll definitely build your career.
 
-## Learn More
+## Maintainence and Mnagement
 
-To learn more about Next.js, take a look at the following resources:
+**Clubs** are managed and maintained by the Organizers
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**Resource archive** is M&M by 
+1. Individual users 
+2. Organizatoin / Club
+3. Librian
