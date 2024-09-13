@@ -17,7 +17,7 @@ a platform Designed and Developed by Students to maintain user engagement and en
 3. Integiry amoung Students
 4. Find like-minded ones
 
-## Story line
+## Storyline
 As a student i have faced a lot of issues on integrity and availability of resources.
 ### The need for CS
 
