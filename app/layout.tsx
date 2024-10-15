@@ -1,9 +1,37 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Dashboard } from "./dashboard";
 import { ThemeProvider } from "@/components/theme-provider";
-
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu"
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { Button } from "@/components/ui/button"
+import { signOut } from "next-auth/react";
+import { NavigationMenuDemo } from "@/components/my-ui/navMenu";
+import SignIn from "@/components/my-ui/sign-in";
+import UserAvatar from "@/components/my-ui/user-avatar";
+import UserName from "@/components/my-ui/user-name";
+import { SessionProvider } from "next-auth/react";
+import { Session } from "next-auth";
+import { ModeToggle } from "@/components/mode-toggle";
+import DropdownLogoutItem from "@/components/my-ui/dropdown-content";
+import UserDropdown from "@/components/my-ui/user-dropdown";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -13,22 +41,39 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  // pageProps: { session, ...pageProps },
+  session,
 }: Readonly<{
   children: React.ReactNode;
+  // pageProps: any;
+  session: Session;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <SessionProvider session={session}>
+      <html lang="en">
+        <body className={inter.className}>
 
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {Dashboard({ children })}
-        </ThemeProvider>
-      </body>
-    </html>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className="h-16 flex px-7 items-center justify-between sticky top-0 bg-primary-foreground bg-opacity-85 backdrop-blur-lg z-50 border-b">
+              <NavigationMenuDemo />
+
+              <div className="flex justify-center items-center gap-4">
+
+                <ModeToggle />
+                <UserDropdown/>
+                
+              </div>
+
+            </div>
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </SessionProvider>
   );
 }

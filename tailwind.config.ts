@@ -72,9 +72,20 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      scrollbar: {
+        width: '8px',
+        thumb: {
+          backgroundColor: '#888',
+          borderRadius: '10px',
+        },
+        track: {
+          backgroundColor: '#f1f1f1',
+        },
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config
 
 export default config
+
