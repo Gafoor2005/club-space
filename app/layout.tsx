@@ -32,6 +32,7 @@ import { Session } from "next-auth";
 import { ModeToggle } from "@/components/mode-toggle";
 import DropdownLogoutItem from "@/components/my-ui/dropdown-content";
 import UserDropdown from "@/components/my-ui/user-dropdown";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -51,26 +52,32 @@ export default function RootLayout({
   return (
     <SessionProvider session={session}>
       <html lang="en">
-        <body className={inter.className}>
+        <body className={`${inter.className}`}>
 
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
-          >
-            <div className="h-16 flex px-7 items-center justify-between md:sticky top-0 bg-primary-foreground bg-opacity-85 backdrop-blur-lg z-50 border-b">
-              <NavigationMenuDemo />
+          > 
+            <SidebarProvider>
+              <main className="w-full">
+                <div className="h-16 flex px-7 items-center justify-between md:sticky top-0 bg-primary-foreground bg-opacity-85 backdrop-blur-lg z-50 border-b">
+                  <NavigationMenuDemo />
 
-              <div className="flex justify-center items-center gap-4">
+                  <div className="flex justify-center items-center gap-4">
+                    <SidebarTrigger className="md:hidden"/>
+                    <ModeToggle />
+                    <UserDropdown/>
+                    
+                  </div>
 
-                <ModeToggle />
-                <UserDropdown/>
-                
-              </div>
+                </div>
 
-            </div>
-            {children}
+                {children}
+              </main>
+            </SidebarProvider>
+            
           </ThemeProvider>
         </body>
       </html>
