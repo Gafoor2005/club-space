@@ -19,7 +19,7 @@ export default function Page({
           </div>
         </Sidebar>
       </div>
-      <div className="hidden md:block min-w-44">
+      <div className="hidden md:block min-w-44 sticky top-24">
         <SideNav />
       </div>
       {children}

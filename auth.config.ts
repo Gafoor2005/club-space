@@ -1,6 +1,7 @@
 import MicrosoftEntraID from "next-auth/providers/microsoft-entra-id"
 import type { NextAuthConfig } from "next-auth"
 import Credentials from "next-auth/providers/credentials"
+import Instagram from "next-auth/providers/instagram"
 
 /**
  * Define the credential authentication provider.
@@ -35,6 +36,7 @@ const credentialsProvider = Credentials({
 export default {
     providers: [
         credentialsProvider,
+        Instagram,
         MicrosoftEntraID({
             clientId: process.env.AZURE_AD_CLIENT_ID,
             clientSecret: process.env.AZURE_AD_CLIENT_SECRET,
