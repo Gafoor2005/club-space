@@ -6,7 +6,7 @@ export default function Page() {
     return <>
   
       <div className="w-full ">
-        <p className="underline text-gray-400 text-xs mb-1">sponsored</p>
+        <p className="underline text-gray-400 text-xs mb-1 ml-1">sponsored</p>
         <div className="w-full h-52 bg-primary rounded-2xl bg-[url('/homeban.svg')] bg-cover">
         </div>
         <div className="my-8">

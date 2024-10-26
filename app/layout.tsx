@@ -33,6 +33,16 @@ import { ModeToggle } from "@/components/mode-toggle";
 import DropdownLogoutItem from "@/components/my-ui/dropdown-content";
 import UserDropdown from "@/components/my-ui/user-dropdown";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import Image from "next/image";
+import localFont from 'next/font/local';
+import Link from "next/link";
+
+export const frick = localFont({
+  src:'./Frick0.3-Condensed.woff2',
+  display: 'swap'
+})
+
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -63,10 +73,24 @@ export default function RootLayout({
             <SidebarProvider>
               <main className="w-full">
                 <div className="h-16 flex px-7 items-center justify-between md:sticky top-0 bg-primary-foreground bg-opacity-85 backdrop-blur-lg z-50 border-b">
-                  <NavigationMenuDemo />
 
+                  {/* <NavigationMenuDemo /> */}
                   <div className="flex justify-center items-center gap-4">
                     <SidebarTrigger className="md:hidden"/>
+                    <Link href='/' >
+                      <p className={frick.className+ " text-3xl pt-1.5 select-none"}>ClubSpace</p>
+                    </Link>
+                  </div>
+
+                  {/* <Image
+                    src={"/csLogo.svg"}
+                    width={50}
+                    height={30}
+                    alt="cs logo"
+                  /> */}
+
+                  <div className="flex justify-center items-center gap-4">
+                    
                     <ModeToggle />
                     <UserDropdown/>
                     

@@ -41,7 +41,3 @@ export const fetchDrive = async (url:string, token:string) => {
 
     return response.json();
 };
-
-export const DriveList = {
-    "CSE":"dslfdskfsf"
-}
