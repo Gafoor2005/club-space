@@ -1,6 +1,6 @@
 
 import FriendsActivity from "@/components/my-ui/friends-activity";
-import SideNav from "@/components/my-ui/side-nav";
+import SideNav from "@/components/my-ui/sidebar-nav";
 
 // export default function Home() {
 //   return (

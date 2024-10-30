@@ -23,7 +23,7 @@ const items = [
   
   return (
     <>
-    <div className="px-8 mt-4">
+    <div className="px-8 mt-4 w-full">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -32,11 +32,12 @@ const items = [
           <BreadcrumbSeparator/>
         </BreadcrumbList>
       </Breadcrumb>
+      <div className="h-4"></div>
+      <div className="flex gap-2 flex-col max-w-[40rem]">
+        <DrivesComponet accessToken={session?.accessToken??""} />
+      </div>
     </div>
-    <div className="px-8 py-4 flex gap-2 flex-col max-w-[40rem]">
-
-    <DrivesComponet accessToken={session?.accessToken??""} />
-    </div>
+    
     </>
   )
 }

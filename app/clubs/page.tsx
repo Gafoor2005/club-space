@@ -1,6 +1,6 @@
 
 import FriendsActivity from "@/components/my-ui/friends-activity";
-import SideNav from "@/components/my-ui/side-nav";
+import SideNav from "@/components/my-ui/sidebar-nav";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { GalleryVerticalEnd } from "lucide-react";

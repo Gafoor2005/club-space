@@ -2,45 +2,13 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from "@/components/ui/navigation-menu"
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Button } from "@/components/ui/button"
-import { signOut } from "next-auth/react";
-import { NavigationMenuDemo } from "@/components/my-ui/navMenu";
-import SignIn from "@/components/my-ui/sign-in";
-import UserAvatar from "@/components/my-ui/user-avatar";
-import UserName from "@/components/my-ui/user-name";
 import { SessionProvider } from "next-auth/react";
 import { Session } from "next-auth";
-import { ModeToggle } from "@/components/mode-toggle";
-import DropdownLogoutItem from "@/components/my-ui/dropdown-content";
-import UserDropdown from "@/components/my-ui/user-dropdown";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import Image from "next/image";
-import localFont from 'next/font/local';
-import Link from "next/link";
+import { SidebarProvider } from "@/components/ui/sidebar";
+import { Header } from "@/components/my-ui/header";
+import SidebarUi from "@/components/my-ui/sidebar-ui";
 
-export const frick = localFont({
-  src:'./Frick0.3-Condensed.woff2',
-  display: 'swap'
-})
+
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -63,7 +31,6 @@ export default function RootLayout({
     <SessionProvider session={session}>
       <html lang="en">
         <body className={`${inter.className}`}>
-
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -72,36 +39,16 @@ export default function RootLayout({
           > 
             <SidebarProvider>
               <main className="w-full">
-                <div className="h-16 flex px-7 items-center justify-between md:sticky top-0 bg-primary-foreground bg-opacity-85 backdrop-blur-lg z-50 border-b">
-
-                  {/* <NavigationMenuDemo /> */}
-                  <div className="flex justify-center items-center gap-4">
-                    <SidebarTrigger className="md:hidden"/>
-                    <Link href='/' >
-                      <p className={frick.className+ " text-3xl pt-1.5 select-none"}>ClubSpace</p>
-                    </Link>
-                  </div>
-
-                  {/* <Image
-                    src={"/csLogo.svg"}
-                    width={50}
-                    height={30}
-                    alt="cs logo"
-                  /> */}
-
-                  <div className="flex justify-center items-center gap-4">
-                    
-                    <ModeToggle />
-                    <UserDropdown/>
-                    
-                  </div>
-
+                
+                <Header />
+  
+                <div className="flex m-7 gap-7">
+                  <SidebarUi />
+                  {children}
                 </div>
 
-                {children}
               </main>
             </SidebarProvider>
-            
           </ThemeProvider>
         </body>
       </html>

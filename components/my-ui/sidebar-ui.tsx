@@ -1,19 +1,14 @@
-import FriendsActivity from "@/components/my-ui/friends-activity";
-import SideNav from "@/components/my-ui/side-nav";
-import { Button } from "@/components/ui/button";
-import { Sidebar,SidebarTrigger } from "@/components/ui/sidebar";
-import { frick } from "../layout";
-import { Separator } from "@/components/ui/separator";
-import { SidebarClose } from "@/components/my-ui/sidebar-close";
+import React from 'react'
+import { Sidebar } from '../ui/sidebar'
+import { SidebarClose } from './sidebar-close'
+import { Separator } from '../ui/separator'
+import SideNav from './sidebar-nav'
+import { frick } from '@/fonts/my-fonts'
 
-export default function Page({
-    children,
-    
-  }: Readonly<{
-    children: React.ReactNode;
-    
-  }>) {
-    return <div className="flex m-7 gap-7">
+
+export default function SidebarUi() {
+  return (
+    <>
       <div className="md:hidden absolute">
         <Sidebar className="flex justify-center items-center">
           <div className="w-full mx-auto my-4 px-8">
@@ -29,8 +24,7 @@ export default function Page({
       <div className="hidden md:block min-w-44 sticky top-24 h-min">
         <SideNav />
       </div>
-      {children}
-    </div>
-  
+    </>
     
-  }
+  )
+}

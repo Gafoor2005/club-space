@@ -19,7 +19,7 @@ export default function SideNav() {
             <Button variant={pathname=='/clubs'? "default":"secondary"} className="justify-start" onClick={()=> router.push('/clubs')}>
                 <Rocket className="mr-2 h-4 w-4" /> Clubs
             </Button>
-            <Button variant={pathname=='/docs'? "default":"secondary"} className="justify-start" onClick={()=> router.push('/docs')}>
+            <Button variant={pathname.startsWith('/docs')? "default":"secondary"} className="justify-start" onClick={()=> router.push('/docs')}>
                 <Files className="mr-2 h-4 w-4" /> Docs
             </Button>
         </div>

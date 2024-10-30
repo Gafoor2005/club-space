@@ -1,5 +1,5 @@
 import FriendsActivity from "@/components/my-ui/friends-activity";
-import SideNav from "@/components/my-ui/side-nav";
+import SideNav from "@/components/my-ui/sidebar-nav";
 import Image from "next/image";
 
 export default function Page() {
