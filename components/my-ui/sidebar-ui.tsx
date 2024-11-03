@@ -1,12 +1,24 @@
+"use client"
 import React from 'react'
 import { Sidebar } from '../ui/sidebar'
 import { SidebarClose } from './sidebar-close'
 import { Separator } from '../ui/separator'
 import SideNav from './sidebar-nav'
 import { frick } from '@/fonts/my-fonts'
+import { usePathname } from 'next/navigation'
+import { cn } from '@/lib/utils'
 
+const showPages = [
+  "/",
+  "/clubs",
+  "/docs",
+  "/blogs",
+]
 
 export default function SidebarUi() {
+  const pathname = usePathname()
+  console.log(showPages.includes(pathname));
+  
   return (
     <>
       <div className="md:hidden absolute">
@@ -21,7 +33,7 @@ export default function SidebarUi() {
           </div>
         </Sidebar>
       </div>
-      <div className="hidden md:block min-w-44 sticky top-24 h-min">
+      <div className={cn("hidden min-w-44 sticky top-24 h-min",showPages.includes(pathname)?"md:block":"")}>
         <SideNav />
       </div>
     </>

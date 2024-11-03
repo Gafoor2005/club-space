@@ -13,6 +13,7 @@ import { siX,siDiscord, siLinkedin, SimpleIcon, siInstagram} from 'simple-icons'
 import { Bungee } from "next/font/google";
 import Link from "next/link";
 import { frick } from "@/fonts/my-fonts";
+import { Icon } from "@/components/my-ui/icons";
 
 const marvel = Bungee({weight:'400', subsets:['latin']});
 
@@ -98,8 +99,3 @@ export default function Page() {
     </div>
   }
 
-function Icon({ic,}:{ic:SimpleIcon}){
-  return (
-    <div className="dark:fill-white size-4" dangerouslySetInnerHTML={{__html: ic.svg}}></div>
-  )
-}
