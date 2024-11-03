@@ -23,7 +23,7 @@ const items = [
   
   return (
     <>
-    <div className="px-8 mt-4 w-full">
+    <div className="px-4 mt-4 w-full">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>

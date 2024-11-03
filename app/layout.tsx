@@ -42,7 +42,7 @@ export default function RootLayout({
                 
                 <Header />
   
-                <div className="flex m-7 gap-7">
+                <div className="flex md:m-7 gap-7">
                   <SidebarUi />
                   {children}
                 </div>

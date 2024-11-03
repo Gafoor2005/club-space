@@ -1,11 +1,12 @@
 import FriendsActivity from "@/components/my-ui/friends-activity";
 import SideNav from "@/components/my-ui/sidebar-nav";
 import Image from "next/image";
+import { ScrollArea } from "@/components/ui/scroll-area"
+
 
 export default function Page() {
     return <>
-  
-      <div className="w-full ">
+      <div className="w-full m-4 md:m-0">
         <p className="underline text-gray-400 text-xs mb-1 ml-1">sponsored</p>
         <div className="w-full h-52 bg-primary rounded-2xl bg-[url('/homeban.svg')] bg-cover">
         </div>
